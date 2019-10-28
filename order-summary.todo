@@ -1,6 +1,8 @@
 Order-summary:
-    ☐ create a order page
-Tasks:
-    ☐ create a skeleton of the we page @today 
-    ☐ get data using api
+    ✔ create a skeleton of the we page @today @done (28/10/2019, 6:03:44 PM)
+    ✔ get data using api @done (28/10/2019, 6:03:35 PM)
+    ✔ fonts @done (28/10/2019, 6:26:39 PM)
+    ☐ edges round
+    ☐ cream bacckgroungd
+    ☐ nav bar
     ☐ check loader

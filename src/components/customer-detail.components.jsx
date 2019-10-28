@@ -1,9 +1,6 @@
 import React from "react";
 
-export const CustomerDetailas = ({ cusDetail, isLoaded }) => {
-  if (!isLoaded) {
-    return <div>noot loaded</div>;
-  }
+export const CustomerDetailas = ({ cusDetail }) => {
   console.log(cusDetail);
 
   let { name, id } = cusDetail;

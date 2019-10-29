@@ -17,7 +17,6 @@ export class OrderSummary extends React.Component {
       order: {},
       isLoaded: false,
       pageNo: 0
-      
     };
   }
 
@@ -28,7 +27,8 @@ export class OrderSummary extends React.Component {
         console.log(json);
         this.setState({
           isLoaded: true,
-          order: json
+          order: json,
+          pageNo: 0
         });
       });
     console.log("Data fetched: ", this.state.isLoaded);
@@ -36,14 +36,22 @@ export class OrderSummary extends React.Component {
   }
 
   handleIncresePageNo = () => {
-    this.setState(() => { 
-      if(pageNo == 3){
-        return(pageNo: 1) });
+    this.setState(prevState => {
+      if (prevState.pageNo === 3) {
+        return { pageNo: 0 };
       }
-      return(pageNo: this.state.pageNo + 1) });
+
+      return { pageNo: prevState.pageNo + 1 };
+    });
   };
   handleDecresePageNo = () => {
-    this.setState({ pageNo: this.state.pageNo - 1 });
+    this.setState(prevState => {
+      if (prevState.pageNo === 0) {
+        return { pageNo: 0 };
+      }
+
+      return { pageNo: prevState.pageNo - 1 };
+    });
   };
   render() {
     let { isLoaded, order, pageNo } = this.state;
@@ -65,10 +73,14 @@ export class OrderSummary extends React.Component {
           <CustomerDetailas cusDetail={order.user} />
           <ResturantDetail restaurantDetail={order.restaurant} />
           <OrderDetail
-            items={order.items}
-            pageNo={pageNo}
+            items={order.items.slice(
+              this.state.pageNo * 3,
+              3 * (this.state.pageNo + 1)
+            )}
+            pageNo={pageNo + 1}
             handleDecresePageNo={this.handleDecresePageNo}
             handleIncresePageNo={this.handleIncresePageNo}
+            totalPage={Math.ceil(order.items.length / 3)}
           />
         </div>
       </React.Fragment>

@@ -7,11 +7,11 @@ export const ResturantDetail = ({ restaurantDetail }) => {
 
   return (
     <div className="resaturant-detail">
-      <span>{city}</span>
-      <span>{name}</span>
-      <span>{state}</span>
-      <span>{street}</span>
-      <span>{zipcode}</span>
+      <div>City: {city}</div>
+      <div>Name: {name}</div>
+      <div>State: {state}</div>
+      <div>Street: {street}</div>
+      <div>Zip-code: {zipcode}</div>
     </div>
   );
 };

@@ -21,18 +21,18 @@ export class OrderSummary extends React.Component {
   }
 
   componentDidMount() {
-    // fetch("https://indapi.kumba.io/webdev/assignment")
-    //   .then(res => res.json())
-    //   .then(json => {
-    //     console.log(json);
-    //     this.setState({
-    //       isLoaded: true,
-    //       order: json,
-    //       pageNo: 0
-    //     });
-    //   });
-    // console.log("Data fetched: ", this.state.isLoaded);
-    // console.log(this.state.order);
+    fetch("https://indapi.kumba.io/webdev/assignment")
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        this.setState({
+          isLoaded: true,
+          order: json,
+          pageNo: 0
+        });
+      });
+    console.log("Data fetched: ", this.state.isLoaded);
+    console.log(this.state.order);
   }
 
   render() {
@@ -54,18 +54,7 @@ export class OrderSummary extends React.Component {
         <div className="grid-container">
           <CustomerDetailas cusDetail={order.user} />
           <ResturantDetail restaurantDetail={order.restaurant} />
-          <OrderDetail
-            items={order.items}
-            // totalItems={order.items.length1}
-            // items={order.items.slice(
-            //   this.state.pageNo * 3,
-            //   3 * (this.state.pageNo + 1)
-            // )}
-            // pageNo={pageNo + 1}
-            // handleDecresePageNo={this.handleDecresePageNo}
-            // handleIncresePageNo={this.handleIncresePageNo}
-            // totalPage={Math.ceil(order.items.length / 3)}
-          />
+          <OrderDetail items={order.items} />
         </div>
       </React.Fragment>
     );

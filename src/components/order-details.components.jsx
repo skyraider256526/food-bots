@@ -7,12 +7,6 @@ export class OrderDetail extends React.Component {
       items: this.props.items,
       pageNo: 0
     };
-    // totalItems,
-    //   items,
-    //   pageNo,
-    //   totalPage,
-    //   handleDecresePageNo,
-    //   handleIncresePageNo;
   }
   handleIncresePageNo = () => {
     this.setState(prevState => {
@@ -47,9 +41,6 @@ export class OrderDetail extends React.Component {
       3 * (this.state.pageNo + 1)
     );
     const totalPage = Math.ceil(this.state.items.length / 3);
-    // pageNo=pageNo + 1
-
-    // console.log(items, pageNo);
     const orderedItems = itemsToRender.map(item => {
       const { name, category, price, currency, tax, quantity } = item;
       return (

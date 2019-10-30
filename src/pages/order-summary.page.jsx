@@ -21,18 +21,18 @@ export class OrderSummary extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://indapi.kumba.io/webdev/assignment")
-      .then(res => res.json())
-      .then(json => {
-        console.log(json);
-        this.setState({
-          isLoaded: true,
-          order: json,
-          pageNo: 0
-        });
-      });
-    console.log("Data fetched: ", this.state.isLoaded);
-    console.log(this.state.order);
+    // fetch("https://indapi.kumba.io/webdev/assignment")
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     console.log(json);
+    //     this.setState({
+    //       isLoaded: true,
+    //       order: json,
+    //       pageNo: 0
+    //     });
+    //   });
+    // console.log("Data fetched: ", this.state.isLoaded);
+    // console.log(this.state.order);
   }
 
   render() {

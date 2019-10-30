@@ -7,6 +7,10 @@ export const CustomerDetailas = ({ cusDetail }) => {
 
   return (
     <div className="custDetail">
+      <h5 style={{ textDecoration: "underline wavy blue" }}>
+        <b>Customer Detail</b>
+      </h5>
+      <br />
       <span className="name">Name: {name}</span>
       <br />
       <span className="id">Id: {id}</span>

@@ -17,10 +17,11 @@
     grid-area: rest;
     height: 50vh;
     padding: 10px 0 0 10px;
-    // background-color: rgba(0, 255, 0, 0.43);
+    background-color: rgba(121, 85, 72, 0.55);
   }
   .custDetail {
     // background-color: #28a745;
+    background-color: rgba(121, 85, 72, 0.55);
     border-bottom: 2px solid;
     grid-area: cust;
     height: 50vh;
@@ -28,6 +29,10 @@
   }
   .order-detail {
     // background-color: #28a745;
+    .bill {
+      font-size: 0.8rem;
+    }
+    background-color: rgba(121, 85, 72, 0.55);
     border-left: 2px solid;
     grid-area: order;
     padding: 0px;
@@ -35,7 +40,7 @@
       margin-top: 8px;
       margin-bottom: 8px;
       height: 5px;
-      border: 2px dashed #999;
+      border: 2px dashed #000;
     }
     .button-container {
       cursor: pointer;
@@ -57,6 +62,7 @@
 }
 .loading-screen {
   width: 100%;
+  background-color: rgba(255, 255, 255, 0);
   height: 100%;
   padding-left: 20%;
   padding-top: 20%;

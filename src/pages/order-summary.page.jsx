@@ -35,24 +35,6 @@ export class OrderSummary extends React.Component {
     console.log(this.state.order);
   }
 
-  handleIncresePageNo = () => {
-    this.setState(prevState => {
-      if (prevState.pageNo === 3) {
-        return { pageNo: 0 };
-      }
-
-      return { pageNo: prevState.pageNo + 1 };
-    });
-  };
-  handleDecresePageNo = () => {
-    this.setState(prevState => {
-      if (prevState.pageNo === 0) {
-        return { pageNo: 0 };
-      }
-
-      return { pageNo: prevState.pageNo - 1 };
-    });
-  };
   render() {
     let { isLoaded, order, pageNo } = this.state;
 
@@ -73,14 +55,16 @@ export class OrderSummary extends React.Component {
           <CustomerDetailas cusDetail={order.user} />
           <ResturantDetail restaurantDetail={order.restaurant} />
           <OrderDetail
-            items={order.items.slice(
-              this.state.pageNo * 3,
-              3 * (this.state.pageNo + 1)
-            )}
-            pageNo={pageNo + 1}
-            handleDecresePageNo={this.handleDecresePageNo}
-            handleIncresePageNo={this.handleIncresePageNo}
-            totalPage={Math.ceil(order.items.length / 3)}
+            items={order.items}
+            // totalItems={order.items.length1}
+            // items={order.items.slice(
+            //   this.state.pageNo * 3,
+            //   3 * (this.state.pageNo + 1)
+            // )}
+            // pageNo={pageNo + 1}
+            // handleDecresePageNo={this.handleDecresePageNo}
+            // handleIncresePageNo={this.handleIncresePageNo}
+            // totalPage={Math.ceil(order.items.length / 3)}
           />
         </div>
       </React.Fragment>

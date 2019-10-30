@@ -7,6 +7,9 @@ export const ResturantDetail = ({ restaurantDetail }) => {
 
   return (
     <div className="resaturant-detail">
+      <h5 style={{ textDecoration: "underline wavy blue" }}>
+        <b>Restaurant Detail</b>
+      </h5>
       <div>City: {city}</div>
       <div>Name: {name}</div>
       <div>State: {state}</div>
